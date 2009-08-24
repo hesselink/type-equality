@@ -11,7 +11,7 @@ Description:      In the presence of GADTs, sometimes a proof is
                   decidable equality on types.
 Category:         Data
 Cabal-Version:    >= 1.2.1
-Author:           Erik Hesselink
+Author:           Erik Hesselink, Martijn van Steenbergen
 License:          BSD3
 License-File:     LICENSE
 Maintainer:       hesselink@gmail.com
