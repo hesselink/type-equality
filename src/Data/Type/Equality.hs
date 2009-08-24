@@ -86,3 +86,6 @@ class EqT2 f where
 -- me know.
 class EqT3 f where
   eqT3 :: f a b c -> f a' b' c' -> (Maybe (a :=: a'), Maybe (b :=: b'), Maybe (c :=: c'))
+
+instance EqT ((:=:) a) where
+  eqT Refl Refl = Just Refl
