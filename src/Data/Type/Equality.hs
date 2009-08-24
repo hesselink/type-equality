@@ -35,7 +35,7 @@ instance Category (:=:) where
   id = Refl
   Refl . Refl = Refl
 
--- | Equality is symmetric. Not that useful in practice.
+-- | Equality is symmetric.
 sym :: a :=: b -> b :=: a
 sym Refl = Refl
 
