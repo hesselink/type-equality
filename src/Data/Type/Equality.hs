@@ -1,5 +1,6 @@
 {-# LANGUAGE TypeOperators
            , GADTs
+           , CPP
            #-}
 -------------------------------------------------------------------------------
 -- |
@@ -30,8 +31,11 @@ module Data.Type.Equality
   , EqT3(eqT3)
   ) where
 
-import Prelude hiding (id, (.))
+import Prelude
+#if __GLASGOW_HASKELL__ >= 609
+               hiding (id, (.))
 import Control.Category
+#endif
 
 -- | Type equality. A value of @a :=: b@ is a proof that types @a@ and
 -- @b@ are equal. By pattern matching on @Refl@ this fact is
@@ -41,18 +45,20 @@ data a :=: b where
 
 infix 4 :=:
 
+#if __GLASGOW_HASKELL__ >= 609
 instance Category (:=:) where
   id = Refl
   Refl . Refl = Refl
+#endif
 
 -- | Equality is symmetric.
 sym :: a :=: b -> b :=: a
 sym Refl = Refl
 
--- | Equality is transitive. This is just '>>>' from the
--- 'Category' instance.
+-- | Equality is transitive. This is the same as (>>>) from the 'Category'
+-- instance, but also works in GHC 6.8.
 trans :: a :=: b -> b :=: c -> a :=: c
-trans = (>>>)
+trans Refl Refl = Refl
 
 -- | Equality is substitutive. This is defined directly, but can also
 -- be defined as 'coerce' '.' 'cong'.
