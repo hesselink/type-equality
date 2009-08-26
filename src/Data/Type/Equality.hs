@@ -13,7 +13,6 @@ module Data.Type.Equality
   , cong3
   
   , coerce
-  , cast
   
   , EqT(eqT)
   , EqT2(eqT2)
@@ -64,10 +63,6 @@ cong3 Refl Refl Refl = Refl
 -- | Coerce a type to another using an equality proof.
 coerce :: a :=: b -> a -> b
 coerce Refl = id
-
--- | A synonym for coerce.
-cast :: a :=: b -> a -> b
-cast = coerce
 
 -- | A type class for constructing equality proofs. This is as close
 -- as we can get to decidable equality on types. Note that @f@ must be
