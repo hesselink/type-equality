@@ -3,11 +3,11 @@ Version:          0.1.0
 Synopsis:         Type equality, coercion/cast and other operations.
 Description:      In the presence of GADTs, sometimes a proof is
                   needed that two types are equal. This package
-                  contains an equality type that does this, plus its
+                  contains an equality type for this purpose, plus its
                   properties (reflexive, symmetric, transitive) and
                   some useful operations (substitution, congruence,
                   coercion/cast). It also contains a type class for
-                  producing these equalities, providing a kind of
+                  producing equality proofs, providing some form of
                   decidable equality on types.
 Category:         Data
 Cabal-Version:    >= 1.2.1
@@ -15,6 +15,8 @@ Author:           Erik Hesselink, Martijn van Steenbergen
 License:          BSD3
 License-File:     LICENSE
 Maintainer:       hesselink@gmail.com
+Homepage:         http://github.com/hesselink/type-equality/
+Stability:        experimental
 Build-Type:       Simple
 Build-Depends:    base >= 3 && < 5
 Tested-With:      GHC == 6.8.2, GHC == 6.10.3
