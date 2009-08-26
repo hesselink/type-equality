@@ -16,8 +16,8 @@ License:          BSD3
 License-File:     LICENSE
 Maintainer:       hesselink@gmail.com
 Build-Type:       Simple
-Build-Depends:    base
 Tested-With:      GHC == 6.10.3
+Build-Depends:    base >= 3 && < 5
 
 HS-Source-Dirs:   src
 GHC-Options:      -Wall
