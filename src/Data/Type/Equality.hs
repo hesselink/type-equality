@@ -1,7 +1,18 @@
 {-# LANGUAGE TypeOperators
            , GADTs
            #-}
--- | Type equality, coercion/cast and other operations.
+-------------------------------------------------------------------------------
+-- |
+-- Module      : Data.Type.Equality
+-- Copyright   : (c) 2009, Erik Hesselink
+-- License     : BSD3
+--
+-- Maintainer  : Erik Hesselink <hesselink@gmail.com>
+-- Stability   : Experimental
+--
+-- Type equality, coercion/cast and other operations.
+--
+-------------------------------------------------------------------------------
 module Data.Type.Equality 
   ( (:=:)(Refl)
   , sym
