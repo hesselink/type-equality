@@ -1,5 +1,6 @@
 {-# LANGUAGE TypeOperators
            , GADTs
+           , FlexibleInstances
            , CPP
            #-}
 -------------------------------------------------------------------------------
@@ -44,6 +45,17 @@ data a :=: b where
   Refl :: a :=: a
 
 infix 4 :=:
+
+-- | Any value is just shown as "Refl", but this cannot be derived for
+-- a GADT, so it is defined here manually.
+instance Show (a :=: b) where
+  showsPrec _ Refl = showString "Refl"
+
+-- | We can only read values if the result is @a :=: a@, not @a :=: b@
+-- since that is not true, in general. We just parse the string
+-- "Refl", optionally surrounded with parentheses, and return 'Refl'.
+instance Read (a :=: a) where
+  readsPrec _ = readParen False (\s -> [(Refl, r) | ("Refl", r) <- lex s])
 
 #if __GLASGOW_HASKELL__ >= 609
 instance Category (:=:) where
