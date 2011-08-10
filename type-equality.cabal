@@ -19,7 +19,7 @@ Homepage:         http://github.com/hesselink/type-equality/
 Stability:        experimental
 Build-Type:       Simple
 Build-Depends:    base >= 3 && < 5
-Tested-With:      GHC == 6.8.2, GHC == 6.10.3
+Tested-With:      GHC == 6.8.2, GHC == 6.10.3, GHC == 6.12.3, GHC == 7.0.2, GHC == 7.2.1
 
 HS-Source-Dirs:   src
 GHC-Options:      -Wall
