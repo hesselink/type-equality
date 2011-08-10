@@ -10,7 +10,7 @@ Description:      In the presence of GADTs, sometimes a proof is
                   producing equality proofs, providing some form of
                   decidable equality on types.
 Category:         Data
-Cabal-Version:    >= 1.2.1
+Cabal-Version:    >= 1.6
 Author:           Erik Hesselink, Martijn van Steenbergen
 License:          BSD3
 License-File:     LICENSE
@@ -25,3 +25,7 @@ Library
   HS-Source-Dirs:   src
   GHC-Options:      -Wall
   Exposed-Modules:  Data.Type.Equality
+
+Source-Repository head
+  Type:             git
+  Location:         git://github.com/hesselink/type-equality.git
