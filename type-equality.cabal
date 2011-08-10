@@ -1,5 +1,5 @@
 Name:             type-equality
-Version:          0.1.0
+Version:          0.1.0.1
 Synopsis:         Type equality, coercion/cast and other operations.
 Description:      In the presence of GADTs, sometimes a proof is
                   needed that two types are equal. This package
