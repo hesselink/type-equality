@@ -1,5 +1,5 @@
 Name:             type-equality
-Version:          0.1.0.1
+Version:          0.1.0.2
 Synopsis:         Type equality, coercion/cast and other operations.
 Description:      In the presence of GADTs, sometimes a proof is
                   needed that two types are equal. This package
@@ -18,10 +18,10 @@ Maintainer:       hesselink@gmail.com
 Homepage:         http://github.com/hesselink/type-equality/
 Stability:        experimental
 Build-Type:       Simple
-Build-Depends:    base >= 3 && < 5
 Tested-With:      GHC == 6.8.2, GHC == 6.10.3, GHC == 6.12.3, GHC == 7.0.2, GHC == 7.2.1
 
 Library
+  Build-Depends:    base >= 3 && < 5
   HS-Source-Dirs:   src
   GHC-Options:      -Wall
   Exposed-Modules:  Data.Type.Equality
