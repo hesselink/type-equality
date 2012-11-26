@@ -3,6 +3,9 @@
            , FlexibleInstances
            , CPP
            #-}
+#if __GLASGOW_HASKELL__ >= 706
+{-# LANGUAGE PolyKinds #-}
+#endif
 -------------------------------------------------------------------------------
 -- |
 -- Module      : Data.Type.Equality
