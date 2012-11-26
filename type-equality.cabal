@@ -1,31 +1,32 @@
-Name:             type-equality
-Version:          0.1.0.2
-Synopsis:         Type equality, coercion/cast and other operations.
-Description:      In the presence of GADTs, sometimes a proof is
-                  needed that two types are equal. This package
-                  contains an equality type for this purpose, plus its
-                  properties (reflexive, symmetric, transitive) and
-                  some useful operations (substitution, congruence,
-                  coercion/cast). It also contains a type class for
-                  producing equality proofs, providing some form of
-                  decidable equality on types.
-Category:         Data
-Cabal-Version:    >= 1.6
-Author:           Erik Hesselink, Martijn van Steenbergen
-License:          BSD3
-License-File:     LICENSE
-Maintainer:       hesselink@gmail.com
-Homepage:         http://github.com/hesselink/type-equality/
-Stability:        experimental
-Build-Type:       Simple
-Tested-With:      GHC == 7.0.4, GHC == 7.4.1, GHC == 7.6.1
+Name:                type-equality
+Version:             0.1.0.2
+Synopsis:            Type equality, coercion/cast and other operations.
+Description:         In the presence of GADTs, sometimes a proof is
+                     needed that two types are equal. This package
+                     contains an equality type for this purpose, plus its
+                     properties (reflexive, symmetric, transitive) and
+                     some useful operations (substitution, congruence,
+                     coercion/cast). It also contains a type class for
+                     producing equality proofs, providing some form of
+                     decidable equality on types.
+Category:            Data
+Cabal-Version:       >= 1.6
+Author:              Erik Hesselink, Martijn van Steenbergen
+License:             BSD3
+License-File:        LICENSE
+Maintainer:          hesselink@gmail.com
+Homepage:            http://github.com/hesselink/type-equality/
+Stability:           experimental
+Build-Type:          Simple
+Tested-With:         GHC == 7.0.4, GHC == 7.4.1, GHC == 7.6.1
+Extra-Source-Files:  CHANGELOG
 
 Library
-  Build-Depends:    base >= 3 && < 5
-  HS-Source-Dirs:   src
-  GHC-Options:      -Wall
-  Exposed-Modules:  Data.Type.Equality
+  Build-Depends:       base >= 3 && < 5
+  HS-Source-Dirs:      src
+  GHC-Options:         -Wall
+  Exposed-Modules:     Data.Type.Equality
 
 Source-Repository head
-  Type:             git
-  Location:         git://github.com/hesselink/type-equality.git
+  Type:                git
+  Location:            git://github.com/hesselink/type-equality.git
