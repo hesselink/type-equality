@@ -18,7 +18,7 @@ Maintainer:       hesselink@gmail.com
 Homepage:         http://github.com/hesselink/type-equality/
 Stability:        experimental
 Build-Type:       Simple
-Tested-With:      GHC == 6.8.2, GHC == 6.10.3, GHC == 6.12.3, GHC == 7.0.2, GHC == 7.2.1
+Tested-With:      GHC == 7.0.4, GHC == 7.4.1, GHC == 7.6.1
 
 Library
   Build-Depends:    base >= 3 && < 5
