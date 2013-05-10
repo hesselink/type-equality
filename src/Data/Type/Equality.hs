@@ -23,6 +23,7 @@ module Data.Type.Equality
   , sym
   , trans
   , subst
+  , subst2
   
   , cong
   , cong2
@@ -79,6 +80,11 @@ trans Refl Refl = Refl
 -- be defined as 'coerce' '.' 'cong'.
 subst :: a :=: b -> f a -> f b
 subst Refl = id
+
+-- | Substitution inside nested type constructors. This is equivalent 
+-- to 'coerce' '.' 'cong' '.' 'cong'.
+subst2 :: a :=: b -> f (g a) -> f (g b)
+subst2 Refl = id
 
 -- | Equality is congruential.
 cong :: a :=: b -> f a :=: f b
