@@ -1,3 +1,6 @@
+0.1.2
+  * Add subst2. Thanks to James Koppel.
+
 0.1.1
   * Turn on PolyKinds for GHC >= 7.6. Thanks to Ben Franksen.
 
