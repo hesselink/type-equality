@@ -1,32 +1,44 @@
-Name:                type-equality
-Version:             0.1.2
-Synopsis:            Type equality, coercion/cast and other operations.
-Description:         In the presence of GADTs, sometimes a proof is
-                     needed that two types are equal. This package
-                     contains an equality type for this purpose, plus its
-                     properties (reflexive, symmetric, transitive) and
-                     some useful operations (substitution, congruence,
-                     coercion/cast). It also contains a type class for
-                     producing equality proofs, providing some form of
-                     decidable equality on types.
-Category:            Data
-Cabal-Version:       >= 1.6
-Author:              Erik Hesselink, Martijn van Steenbergen
-License:             BSD3
-License-File:        LICENSE
-Maintainer:          hesselink@gmail.com
-Homepage:            http://github.com/hesselink/type-equality/
-Stability:           experimental
-Build-Type:          Simple
-Tested-With:         GHC == 7.0.4, GHC == 7.4.1, GHC == 7.6.1
-Extra-Source-Files:  CHANGELOG
+name:          type-equality
+version:       1
+stability:     provisional
+cabal-version: >=1.10
+build-type:    Simple
+author:        Oleg Grenrus <oleg.grenrus@iki.fi>, Ryan Scott <ryan.gl.scott@gmail.com>
+maintainer:    Oleg Grenrus <oleg.grenrus@iki.fi>
+license:       BSD3
+license-file:  LICENSE
+homepage:      https://github.com/phadej/some
+category:      Data, Dependent Types
+synopsis:      Data.Type.Equality compat package
+description:
+  This library defines a propositional equality data type,
+  shims @Data.Type.Equality" as well as possible for older GHCs (< 7.8).
+  .
+  @
+  data a :~: b where
+  \    Refl :: a :~: a
+  @
+  .
+  The module @Data.Type.Equality.Hetero@ shims @:~~:@ equality, for
+  compilers with @PolyKinds@
 
-Library
-  Build-Depends:       base >= 3 && < 5
-  HS-Source-Dirs:      src
-  GHC-Options:         -Wall
-  Exposed-Modules:     Data.Type.Equality
+tested-with:
+  GHC ==8.8.1 || ==8.6.5 || ==8.4.4 || ==8.2.2 || ==8.0.2 || ==7.10.3 || ==7.8.4 || ==7.6.3 || ==7.4.2 || ==7.2.2 || ==7.0.4
 
-Source-Repository head
-  Type:                git
-  Location:            git://github.com/hesselink/type-equality.git
+source-repository head
+  type:     git
+  location: git://github.com/phadej/some.git
+  subdir:   type-equality-compat
+
+library
+  default-language: Haskell2010
+  build-depends:    base >=4.3 && <4.14
+
+  if !impl(ghc >=7.8)
+    hs-source-dirs: src-old
+    exposed-modules:  Data.Type.Equality
+
+  if impl(ghc >=8.0)
+    hs-source-dirs:   src-hetero
+    exposed-modules:  Data.Type.Equality.Hetero
+    other-extensions: PolyKinds
