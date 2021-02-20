@@ -1,6 +1,6 @@
 {-# LANGUAGE CPP                 #-}
 #if __GLASGOW_HASKELL__ <800
-#error "Trying to compiled Data.Type.Equality.Hetero module with GHC <7.6"
+#error "Trying to compiled Data.Type.Equality.Hetero module with GHC <8.0"
 #endif
 {-# LANGUAGE DeriveDataTypeable  #-}
 {-# LANGUAGE GADTs               #-}
