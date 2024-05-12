@@ -1,3 +1,7 @@
+## 1.0.1
+
+  * Support GHC-8.6.5..GHC-9.10.1
+
 ## 1
   * Rewrite the library to contain a shim of recent `base` `Data.Type.Equality` module.
 
